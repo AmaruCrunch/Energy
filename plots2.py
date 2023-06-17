@@ -39,12 +39,11 @@ if feature == 'Energy':
         marker_line_color='darkgray',
         marker_line_width=0.5,
         colorbar_title='Energy Consumption<br>(kWh/person)',
-        projection='natural earth',
     ))
 
     choropleth.update_layout(
         title=f'Energy Consumption per Capita - {year}',
-        geo=dict(showframe=False, showcoastlines=False, projection_type='equirectangular')
+        geo=dict(showframe=True, showcoastlines=True, projection_type='equirectangular')
     )
 
     st.plotly_chart(choropleth)
@@ -61,7 +60,6 @@ elif feature == 'GDP':
         marker_line_color='darkgray',
         marker_line_width=0.5,
         colorbar_title='GDP per capita (USD)',
-        projection='natural earth',
     ))
 
     choropleth_gdp.update_layout(

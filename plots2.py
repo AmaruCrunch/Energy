@@ -39,6 +39,7 @@ if feature == 'Energy':
         marker_line_color='darkgray',
         marker_line_width=0.5,
         colorbar_title='Energy Consumption<br>(kWh/person)',
+        projection='natural earth',
     ))
 
     choropleth.update_layout(
@@ -60,6 +61,7 @@ elif feature == 'GDP':
         marker_line_color='darkgray',
         marker_line_width=0.5,
         colorbar_title='GDP per capita (USD)',
+        projection='natural earth',
     ))
 
     choropleth_gdp.update_layout(

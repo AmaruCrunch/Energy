@@ -23,7 +23,7 @@ Understanding these patterns can inform policy-making, economic forecasts, and s
 col1, col2 = st.columns(2)
 
 feature = col1.selectbox('Select a feature', ['Energy', 'GDP'], index=0)
-year = col2.slider('Select a year', min(df_energy['Year'].unique()), max(df_energy['Year'].unique()), 2019)
+year = col2.slider('Select a year', int(min(df_energy['Year'].unique())), int(max(df_energy['Year'].unique())), 2019)
 
 # Filter energy and GDP dataframes
 df_energy_filtered = df_energy[df_energy['Year'] == year]
@@ -64,7 +64,7 @@ elif feature == 'GDP':
 
     choropleth_gdp.update_layout(
         title=f'GDP per Capita - {year}',
-        geo=dict(showframe=False, showcoastlines=False, projection_type='equirectangular')
+        geo=dict(showframe=True, showcoastlines=True, projection_type='natural earth')
     )
 
     st.plotly_chart(choropleth_gdp)

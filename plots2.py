@@ -43,7 +43,7 @@ if feature == 'Energy':
 
     choropleth.update_layout(
         title=f'Energy Consumption per Capita - {year}',
-        geo=dict(showframe=True, showcoastlines=True, projection_type='equirectangular')
+        geo=dict(showframe=True, showcoastlines=True, projection_type='natural earth')
     )
 
     st.plotly_chart(choropleth)

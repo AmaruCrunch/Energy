@@ -276,7 +276,7 @@ for country in selected_countries:
     df_country.iloc[:, 3:] = df_country.iloc[:, 3:].div(total_consumption,
                                                         axis=0) * 100  # Multiply by 100 to convert to percentage
     df_melted = df_country.melt(id_vars=[ENTITY, 'Code', YEAR], var_name='Source', value_name='Percentage')
-    df_combined = df_combined.append(df_melted)
+    df_combined = pd.concat([df_combined, df_melted], ignore_index=True)
 
 fig = px.bar(df_combined, x='Source', y='Percentage', color=ENTITY, barmode='group',
              title=f'Energy Consumption as Percentage of Total Use in {selected_year}')
